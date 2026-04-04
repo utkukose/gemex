@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemex"
+version = "1.2.0"
+description = "GEMEX: Geodesic Entropic Manifold Explainability — novel model-agnostic XAI grounded in Riemannian information geometry"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Prof. Dr. Utku Kose", email = "utkukose@gmail.com" }
+]
+maintainers = [
+    { name = "Prof. Dr. Utku Kose", email = "utkukose@gmail.com" }
+]
+requires-python = ">=3.8"
+keywords = [
+    "explainable-ai", "xai", "interpretability",
+    "riemannian-geometry", "information-geometry",
+    "fisher-information", "geodesic", "manifold",
+    "machine-learning", "deep-learning", "neural-networks",
+    "medical-imaging", "clinical-decision-support",
+    "feature-attribution", "model-agnostic",
+    "holonomy", "ricci-curvature", "parallel-transport"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Intended Audience :: Healthcare Industry",
+]
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "scikit-learn>=1.0",
+    "matplotlib>=3.4",
+    "pandas>=1.3",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+torch   = ["torch>=1.10", "torchvision>=0.11"]
+tf      = ["tensorflow>=2.6"]
+medical = ["medmnist>=2.0"]
+full    = ["torch>=1.10", "torchvision>=0.11", "tensorflow>=2.6",
+           "medmnist>=2.0", "plotly>=5.0", "seaborn>=0.11",
+           "shap>=0.40", "lime>=0.2"]
+dev     = ["pytest>=7.0", "black", "mypy", "flake8", "pytest-cov"]
+
+[project.urls]
+"Homepage"      = "https://github.com/utkukose/gemex"
+"Source Code"   = "https://github.com/utkukose/gemex"
+"Bug Tracker"   = "https://github.com/utkukose/gemex/issues"
+"Documentation" = "https://github.com/utkukose/gemex#readme"
+"Author"        = "https://www.utkukose.com"
+"ORCID"         = "https://orcid.org/0000-0002-9652-6415"
+"Changelog"     = "https://github.com/utkukose/gemex/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["gemex*"]
