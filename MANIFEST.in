@@ -1,0 +1,10 @@
+include README.md
+include CHANGELOG.md
+include CONTRIBUTING.md
+include LICENSE
+include CITATION.cff
+include pyproject.toml
+include setup.py
+recursive-include gemex *.py
+recursive-include examples *.py
+recursive-include tests *.py

@@ -1,0 +1,171 @@
+cff-version: 1.2.1
+message: >
+  If you use GEMEX in your research, please cite it using the
+  metadata below. A paper citation will be preferred
+  once available; until then please cite the software directly.
+
+title: "GEMEX: Geodesic Entropic Manifold Explainability"
+version: 1.2.1
+date-released: "2026-04-04"
+
+abstract: >
+  GEMEX is a novel, model-agnostic Explainable AI (XAI) library
+  grounded in Riemannian information geometry and differential
+  geometry. It treats a trained model as defining a statistical
+  manifold equipped with the Fisher Information Metric and derives
+  all explanations from the intrinsic geometry of that manifold.
+  Core contributions include the Geodesic Sensitivity Field (GSF)
+  for reparametrisation-invariant feature attribution computed via
+  a 4th-order Runge-Kutta geodesic integrator, the Parallel
+  Transport Interaction (PTI) matrix for holonomy-based pairwise
+  feature interactions, the Riemannian Curvature Triplet (RCT)
+  for three-way feature interactions via the Riemann curvature
+  tensor, the Riemannian Saliency Tensor (RST) for principal
+  explanation directions, the Feature Attention Sequence (FAS) for
+  geodesic attention trajectory analysis, and the Bias Trap
+  Detector (BTD) for geometric bias and confounder detection. The
+  library supports tabular, time series, and image data, wraps any
+  model exposing predict_proba(), and provides 13 dual-theme
+  visualisation types including a 3D statistical manifold surface.
+
+authors:
+  - family-names: Kose
+    given-names: Utku
+    affiliation: >
+      Suleyman Demirel University, Turkey;
+      University of North Dakota, USA;
+      VelTech University, India;
+      Universidad Panamericana, Mexico
+    orcid: "https://orcid.org/0000-0002-9652-6415"
+    email: utkukose@gmail.com
+    website: "https://www.utkukose.com"
+
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+
+repository-code: "https://github.com/utkukose/gemex"
+url: "https://github.com/utkukose/gemex"
+
+keywords:
+  - explainable artificial intelligence
+  - XAI
+  - interpretable machine learning
+  - Riemannian geometry
+  - information geometry
+  - Fisher information matrix
+  - geodesic sensitivity
+  - statistical manifold
+  - feature attribution
+  - feature interaction
+  - parallel transport
+  - holonomy
+  - Riemann curvature tensor
+  - bias detection
+  - model-agnostic
+
+type: software
+
+references:
+  - type: conference-paper
+    authors:
+      - family-names: Kose
+        given-names: Utku
+        orcid: "https://orcid.org/0000-0002-9652-6415"
+    title: "GEMEX: Model-Agnostic XAI via Geodesic Entropic Manifold Analysis"
+    conference:
+      name: "8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (HORA 2026)"
+    year: 2026
+    month: 5
+    notes: "IEEE indexed. Submitted."
+
+  - type: article
+    title: >
+      Information and the accuracy attainable in the estimation
+      of statistical parameters
+    authors:
+      - family-names: Rao
+        given-names: "C. R."
+    journal: "Bulletin of the Calcutta Mathematical Society"
+    volume: 37
+    start: 81
+    end: 91
+    year: 1945
+
+  - type: book
+    title: "Methods of Information Geometry"
+    authors:
+      - family-names: Amari
+        given-names: "Shun-ichi"
+      - family-names: Nagaoka
+        given-names: Hiroshi
+    publisher:
+      name: "American Mathematical Society and Oxford University Press"
+    year: 2000
+    isbn: "0-8218-0531-2"
+
+  - type: book
+    title: "Information Geometry and Its Applications"
+    authors:
+      - family-names: Amari
+        given-names: "Shun-ichi"
+    publisher:
+      name: Springer
+    year: 2016
+    doi: "10.1007/978-4-431-55978-8"
+
+  - type: article
+    title: "An Elementary Introduction to Information Geometry"
+    authors:
+      - family-names: Nielsen
+        given-names: Frank
+    journal: Entropy
+    volume: 22
+    issue: 10
+    start: 1100
+    year: 2020
+    doi: "10.3390/e22101100"
+
+  - type: book
+    title: "Riemannian Geometry"
+    authors:
+      - family-names: do Carmo
+        given-names: "Manfredo Perdigao"
+    publisher:
+      name: "Birkhauser"
+    year: 1992
+    isbn: "0-8176-3490-8"
+
+  - type: book
+    title: "Statistical Decision Rules and Optimal Inference"
+    authors:
+      - family-names: Chentsov
+        given-names: "N. N."
+    publisher:
+      name: "American Mathematical Society"
+    year: 1982
+
+  - type: book
+    title: >
+      Elements of Causal Inference: Foundations and Learning
+      Algorithms
+    authors:
+      - family-names: Peters
+        given-names: Jonas
+      - family-names: Janzing
+        given-names: Dominik
+      - family-names: "Schoelkopf"
+        given-names: Bernhard
+    publisher:
+      name: "MIT Press"
+    year: 2017
+    isbn: "978-0-262-03731-0"
+
+  - type: book
+    title: "Density Estimation for Statistics and Data Analysis"
+    authors:
+      - family-names: Silverman
+        given-names: "B. W."
+    publisher:
+      name: "Chapman and Hall"
+    year: 1986
+    isbn: "978-0-412-24620-3"
