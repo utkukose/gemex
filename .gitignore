@@ -1,0 +1,11 @@
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+examples_results/
+.pytest_cache/
+*.log
+.DS_Store
+Thumbs.db
