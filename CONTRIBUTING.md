@@ -56,7 +56,6 @@ python -m pytest tests/
 
 ## Areas Where Contributions Are Most Welcome
 
-- RGB channel support for image data (currently greyscale only)
 - SLIC superpixel segmentation as alternative to grid patches
 - Additional dataset loaders in example scripts
 - Performance optimisation (vectorised FIM computation)
