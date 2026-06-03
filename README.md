@@ -11,7 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.2.2-orange.svg)](pyproject.toml)
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--9652--6415-a6ce39.svg)](https://orcid.org/0000-0002-9652-6415)
-[![Accepted: IEEE HORA 2026](https://img.shields.io/badge/IEEE-HORA%202026-blue.svg)](#publication)
+[![Accepted: IEEE ICHORA 2026](https://img.shields.io/badge/IEEE-ICHORA%202026-blue.svg)](#publication)
 
 **Prof. Dr. Utku Kose**
 
@@ -718,7 +718,7 @@ GradCAM++ on PneumoniaMNIST, OrganAMNIST and BloodMNIST (RGB).
                Optimization and Robotic Applications (HORA 2026)},
   year      = {2026},
   month     = {May},
-  note      = {Accepted. IEEE ICHORA 2026. ORCID: 0000-0002-9652-6415}
+  doi       = 10.1109/ICHORA69329.2026.11537244
 }
 ```
 
