@@ -404,7 +404,7 @@ capture this three-way modulation.
 
 ## Validated comparative results
 
-> **These results are to appear in a peer-reviewed study**. Currently submitted to IEEE HORA 2026.
+> **These results are in the study at https://doi.org/10.1109/ICHORA69329.2026.11537244.**.
 > Three datasets × three model families (GBM, MLP, DeepMLP) × 5 random seeds.
 
 ### Key finding 1 — Stability: GEMEX is 6–8× more consistent than SHAP
@@ -703,7 +703,7 @@ fig = batch[0].plot('beeswarm', batch_results=batch, theme='dark')
 
 > **Kose, U. (2026). GEMEX: Model-Agnostic XAI via Geodesic Entropic Manifold Analysis.**
 > *8th International Congress on Human-Computer Interaction, Optimization and Robotic
-> Applications (ICHORA 2026), May 21–23, 2026. **Accepted. IEEE indexed.***
+> Applications (ICHORA 2026), May 21–23, 2026. DOI: https://doi.org/10.1109/ICHORA69329.2026.11537244. **IEEE.***
 
 The peer-reviewed paper presents full experimental validation: 5-seed comparative
 study (GBM, MLP, DeepMLP) across three medical datasets, ablation analysis,
@@ -715,10 +715,10 @@ GradCAM++ on PneumoniaMNIST, OrganAMNIST and BloodMNIST (RGB).
   author    = {Kose, Utku},
   title     = {GEMEX: Model-Agnostic XAI via Geodesic Entropic Manifold Analysis},
   booktitle = {8th International Congress on Human-Computer Interaction,
-               Optimization and Robotic Applications (HORA 2026)},
+               Optimization and Robotic Applications (ICHORA 2026)},
   year      = {2026},
   month     = {May},
-  doi       = 10.1109/ICHORA69329.2026.11537244
+  doi       = [10.1109/ICHORA69329.2026.11537244](https://doi.org/10.1109/ICHORA69329.2026.11537244)
 }
 ```
 
