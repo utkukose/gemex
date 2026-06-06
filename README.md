@@ -592,7 +592,7 @@ pip install gemex[full]            # all backends
 | 08 | `08_dermamnist.py` | Image | DermaMNIST — Skin lesions HAM10000 (7 classes) |
 | 09 | `09_organamnist.py` | Image | OrganAMNIST — Abdominal CT organs (11 classes) |
 | 10 | `10_bloodmnist.py` | Image | BloodMNIST — Blood cell microscopy (8 classes, RGB) |
-| 11 | `11_gemex_tabular_plots.py` | Tabular | Heart Disease — waterfall, heatmap, curvature plots |
+| 11 | `11_alternative_plots_tabular.py` | Tabular | Heart Disease — waterfall, heatmap, curvature plots |
 | 12 | `12_triplet_hypergraph.py` | Tabular | Heart Disease — RCT three-way interactions hypergraph |
 | 13 | `13_image_trio.py` | Image | PneumoniaMNIST / OrganAMNIST / BloodMNIST — standalone image_trio |
 | 14 | `14_all_plots_showcase.py` | Tabular | Pima Diabetes — all 13 plot types in one run |

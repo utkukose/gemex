@@ -6,8 +6,8 @@
 #
 # GEMEX: Geodesic Entropic Manifold Explainability v1.2.2
 """
-11_gemex_tabular_plots.py
-=======================
+11_alternative_plots_tabular.py
+===============================
 Demonstrates three plot types added in v1.2.2 on tabular medical data:
 
   waterfall     — cumulative GSF attribution from baseline to prediction
@@ -22,9 +22,9 @@ Requirements
 
 Usage
 -----
-  python 11_gemex_tabular_plots.py
-  python 11_gemex_tabular_plots.py --heart-path ./cleveland_heart.csv
-  python 11_gemex_tabular_plots.py --theme light --save-dir ./gemex_tabular_plots
+  python 11_alternative_plots_tabular.py
+  python 11_alternative_plots_tabular.py --heart-path ./cleveland_heart.csv
+  python 11_alternative_plots_tabular.py --theme light --save-dir ./gemex_tabular_plots
 """
 
 import argparse
