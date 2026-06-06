@@ -52,12 +52,13 @@ print(result.top_features(5))
 print(result.top_interactions(3))
 print(f"Ricci: {result.manifold_curvature:.4f}  FIM: {result.fim_quality}")
 
-# All 13 visualisation types — dark and light themes
+# All 14 visualisation types — dark and light themes
 result.plot("gsf_bar",             theme="dark")
 result.plot("force",               theme="dark")
 result.plot("waterfall",           theme="dark")
 result.plot("heatmap",             theme="dark")
 result.plot("beeswarm",            theme="dark", batch_results=batch)
+result.plot("dependence",          theme="dark", batch_results=batch)
 result.plot("network",             theme="dark")
 result.plot("curvature",           theme="dark")
 result.plot("attention_heatmap",   theme="dark")
@@ -70,7 +71,7 @@ result.plot("triplet_hypergraph",  theme="dark")  # interaction_order=3
 
 ---
 
-## All 13 visualisations — what they show and how to read them
+## All 14 visualisations — what they show and how to read them
 
 ### 1 · GSF Attribution Bar Chart (`gsf_bar`)
 
@@ -181,7 +182,25 @@ instances — the GEMEX equivalent of SHAP's beeswarm summary plot.
 
 ---
 
-### 6 · Feature Interaction Network (`network`)
+### 6 · Geodesic Dependence Plot (`dependence`)
+
+**What it shows:** A dependence view for the two most influential features in
+the current explanation. Each panel plots the original feature value against its
+GSF attribution across a batch of instances, with colour indicating the strongest
+holonomy interaction partner for that feature.
+
+**How to read it:**
+- **X-axis** → original feature value.
+- **Y-axis** → signed GSF attribution for that feature.
+- **Gold diamond** → the currently explained instance.
+- **Trend line** → how attribution changes as the feature value varies across the
+  reference batch.
+- **Point colour** → the interacting feature with the strongest PTI relationship.
+- Requires `batch_results=batch` for a meaningful population-level view.
+
+---
+
+### 7 · Feature Interaction Network (`network`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/heart_network_dark.png" width="78%" alt="GEMEX interaction network"/>
@@ -205,7 +224,7 @@ statistical manifold.
 
 ---
 
-### 7 · Geodesic Arc-Length Profile (`curvature`)
+### 8 · Geodesic Arc-Length Profile (`curvature`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/pima_curvature_dark.png" width="88%" alt="GEMEX geodesic arc-length profile"/>
@@ -233,7 +252,7 @@ the surface bends at each step along the path.
 
 ---
 
-### 8 · Feature Attention Heatmap (`attention_heatmap`)
+### 9 · Feature Attention Heatmap (`attention_heatmap`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/pima_attention_heatmap_dark.png" width="92%" alt="GEMEX FAS attention heatmap"/>
@@ -260,7 +279,7 @@ captures this temporal dimension of explanation.
 
 ---
 
-### 9 · Attention Dwell Bar Chart (`attention_dwell`)
+### 10 · Attention Dwell Bar Chart (`attention_dwell`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/pima_attention_dwell_dark.png" width="82%" alt="GEMEX attention dwell bar chart"/>
@@ -286,7 +305,7 @@ concentrated during the explanation journey.
 
 ---
 
-### 10 · Attention vs Effect Scatter (`attention_vs_effect`)
+### 11 · Attention vs Effect Scatter (`attention_vs_effect`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/pima_attention_vs_effect_dark.png" width="82%" alt="GEMEX attention vs effect scatter"/>
@@ -312,7 +331,7 @@ four quadrants each have a distinct interpretation, labelled directly on the plo
 
 ---
 
-### 11 · Bias Trap Detection (`bias`)
+### 12 · Bias Trap Detection (`bias`)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/utkukose/gemex/main/docs/images/heart_bias_dark.png" width="75%" alt="GEMEX bias trap detection"/>
@@ -339,7 +358,7 @@ or GradCAM. Each bar is a stacked score from three independent geometric indicat
 
 ---
 
-### 12 · GeodesicCAM / ManifoldSeg / PerturbFlow (`image_trio`)
+### 13 · GeodesicCAM / ManifoldSeg / PerturbFlow (`image_trio`)
 
 **What it shows:** Three-panel image explanation for `data_type='image'`:
 - **Panel 1 (Original)** — the input image.
@@ -367,7 +386,7 @@ identifies the left upper lobe as the dominant region using only `predict_proba(
 
 ---
 
-### 13 · Triplet Hypergraph (`triplet_hypergraph`)
+### 14 · Triplet Hypergraph (`triplet_hypergraph`)
 
 Requires `interaction_order=3` in `GemexConfig`.
 
@@ -595,7 +614,7 @@ pip install gemex[full]            # all backends
 | 11 | `11_alternative_plots_tabular.py` | Tabular | Heart Disease — waterfall, heatmap, curvature plots |
 | 12 | `12_triplet_hypergraph.py` | Tabular | Heart Disease — RCT three-way interactions hypergraph |
 | 13 | `13_image_trio.py` | Image | PneumoniaMNIST / OrganAMNIST / BloodMNIST — standalone image_trio |
-| 14 | `14_all_plots_showcase.py` | Tabular | Pima Diabetes — all 13 plot types in one run |
+| 14 | `14_all_plots_showcase.py` | Tabular | Pima Diabetes — all applicable tabular plot types in one run |
 
 ---
 

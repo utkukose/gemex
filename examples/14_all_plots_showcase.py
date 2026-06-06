@@ -8,15 +8,17 @@
 """
 14_all_plots_showcase.py
 ============================
-One-stop showcase of every plot type available in GEMEX v1.2.2.
+One-stop showcase of the tabular plot types available in GEMEX v1.2.2.
 
 Dataset: Pima Indians Diabetes (UCI, 8 features)
 
-Produces one output PNG per plot kind for a positive (Diabetes) instance:
+Produces one output PNG per applicable tabular plot kind for a positive
+(Diabetes) instance:
   gsf_bar              — feature attribution bar with uncertainty
   force                — force/push-pull diagram
   waterfall            — cumulative attribution from baseline to prediction  
   heatmap              — feature × instance GSF grid (20-instance batch)    
+  dependence           — feature dependence against GSF attribution
   curvature            — geodesic arc-length profile                         
   triplet_hypergraph   — three-way RCT interactions as hypergraph            
   network              — holonomy interaction network (PTI)
@@ -25,9 +27,9 @@ Produces one output PNG per plot kind for a positive (Diabetes) instance:
   attention_vs_effect  — attention vs attribution scatter
   bias                 — bias trap detection (BTD)
   beeswarm             — batch GSF distribution
-  image_trio           — not applicable to tabular data
+  image_trio           — image-only; see 13_image_trio.py
 
-interaction_order=3 is used so that all plot types including
+interaction_order=3 is used so that all tabular plot types including
 triplet_hypergraph are available.
 
 Requirements
@@ -160,6 +162,7 @@ def main():
         ('force',            {},                           'Force / push-pull diagram'),
         ('waterfall',        {},                           'Cumulative waterfall'),
         ('heatmap',          {'batch_results': batch},     'Feature x instance heatmap'),
+        ('dependence',       {'batch_results': batch},     'Geodesic dependence plot'),
         ('curvature',        {},                           'Geodesic arc-length profile'),
         ('triplet_hypergraph', {'top_n': 10},              'RCT triplet hypergraph'),
         ('network',          {},                           'Holonomy interaction network'),

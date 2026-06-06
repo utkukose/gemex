@@ -81,8 +81,6 @@ class VizDispatcher:
             raise NotImplementedError(f"Plot '{kind}' not yet implemented.")
         return fn(t, **kwargs)
 
-    # ── individual plot methods (delegated to standalone functions) ── #
-
     def _plot_gsf_bar(self, t, **kw):
         return _gsf_bar(self.r, t, **kw)
 
@@ -137,7 +135,6 @@ def _gsf_bar(r, t, figsize=(8, 5.5), save_path=None, **kw):
     curv  = abs(r.manifold_curvature)
     order = np.argsort(np.abs(gsf))[::-1]
     gsf_s = gsf[order]; nm_s = [names[i] for i in order]
-    # Fix 4: use real curvature-weighted per-feature uncertainty
     raw_unc = getattr(r, 'gsf_uncertainty', np.abs(gsf) * curv * 0.22)
     unc   = raw_unc[order]
     max_g = np.max(np.abs(gsf_s)) + 1e-10
@@ -244,9 +241,6 @@ def _force(r, t, figsize=(9, 6), save_path=None, **kw):
     return fig
 
 
-# Remaining plot functions are thin wrappers that call the standalone scripts
-# from the final scripts already developed. For brevity they delegate to helpers.
-
 def _beeswarm(r, t, batch_results=None, figsize=(9,5.8), save_path=None, **kw):
     import matplotlib.pyplot as plt, matplotlib.lines as ml
     import matplotlib.colors as mc, numpy as np
@@ -318,11 +312,6 @@ def _beeswarm(r, t, batch_results=None, figsize=(9,5.8), save_path=None, **kw):
     if save_path:
         plt.savefig(save_path, dpi=150, bbox_inches='tight', facecolor=t['bg'])
     return fig
-
-
-# Remaining plots (dependence, attention_*, bias, network, image_trio)
-# delegate to the standalone scripts in the examples/ folder.
-# They are called identically but return a matplotlib Figure.
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -1618,7 +1607,6 @@ def _timeseries_attribution(r, t,
     # ═══════════════════════════════════════════════════════════════
     # Panel 3 — Per-step GSF attribution bars
     # ═══════════════════════════════════════════════════════════════
-    # Fix 4: use real per-feature uncertainty if available
     raw_unc = getattr(r, 'gsf_uncertainty', np.abs(gsf) * curv * 0.22)
     unc     = raw_unc
     cols_b = [t['pos'] if g > 0 else t['neg'] for g in gsf]
